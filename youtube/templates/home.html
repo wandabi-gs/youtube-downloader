@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        {% for video in results %}
+            <div class="card col-lg-3 border-none shadow-none px-3">
+                <a href="{% url 'download' %}?video_url={{video.watch_url}}">
+                <img src="{{video.thumbnail_url}}" alt="" class="img-fluid">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
